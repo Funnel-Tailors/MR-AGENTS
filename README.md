@@ -17,7 +17,7 @@ git fetch origin
 git merge origin/main --allow-unrelated-histories
 ```
 
-## Agentes Disponibles (33)
+## Agentes Disponibles (34)
 
 ### Críticos (opus + plan)
 Decisiones de alto impacto que requieren análisis profundo y aprobación.
@@ -78,6 +78,7 @@ Análisis e investigación sin modificaciones.
 | `design-review-agent` | Review de diseño UI con Playwright |
 | `innovation-explorer` | Exploración de tecnologías emergentes |
 | `prompt-engineer` | Diseño y optimización de prompts |
+| `unique-design-system-architect` | Componentes UI únicos, anti-vibecoding |
 
 ### Orquestación (sonnet + delegate)
 Coordinan otros agentes.
