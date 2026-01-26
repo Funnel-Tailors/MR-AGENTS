@@ -17,7 +17,7 @@ git fetch origin
 git merge origin/main --allow-unrelated-histories
 ```
 
-## Agentes Disponibles (35)
+## Agentes Disponibles (36)
 
 ### Críticos (opus + plan)
 Decisiones de alto impacto que requieren análisis profundo y aprobación.
@@ -41,6 +41,7 @@ Análisis profundo sin modificaciones directas.
 | Agente | Descripción |
 |--------|-------------|
 | `competitive-analyst` | Análisis de competencia, posicionamiento |
+| `premium-motion-auditor` | Auditoría de motion design, animaciones premium estilo Linear/Vercel |
 | `product-strategist` | Decisiones build/kill, roadmap, priorización |
 | `senior-code-reviewer` | Code review exhaustivo, bugs, seguridad |
 
@@ -64,7 +65,6 @@ Implementan código directamente.
 |--------|-------------|
 | `analytics-implementation-expert` | Tracking de eventos, funnels, métricas |
 | `playwright-e2e-expert` | Tests E2E con Playwright |
-| `premium-motion-designer` | Animaciones cinematográficas y microinteracciones para landings |
 | `premium-ui-designer` | UI premium, animaciones, micro-interacciones |
 | `test-architect` | Tests unitarios, integración, cobertura |
 | `ux-pain-point-fixer` | Identificación y fix de problemas UX |
