@@ -17,7 +17,7 @@ git fetch origin
 git merge origin/main --allow-unrelated-histories
 ```
 
-## Agentes Disponibles (36)
+## Agentes Disponibles (37)
 
 ### Críticos (opus + plan)
 Decisiones de alto impacto que requieren análisis profundo y aprobación.
@@ -41,6 +41,7 @@ Análisis profundo sin modificaciones directas.
 | Agente | Descripción |
 |--------|-------------|
 | `competitive-analyst` | Análisis de competencia, posicionamiento |
+| `mobile-game-sprite-artist` | Dirección de arte de sprites/animaciones para juegos móviles, sprite sheets, atlas, specs |
 | `premium-motion-auditor` | Auditoría de motion design, animaciones premium estilo Linear/Vercel |
 | `product-strategist` | Decisiones build/kill, roadmap, priorización |
 | `senior-code-reviewer` | Code review exhaustivo, bugs, seguridad |
