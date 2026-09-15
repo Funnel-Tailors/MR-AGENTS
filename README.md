@@ -17,7 +17,29 @@ git fetch origin
 git merge origin/main --allow-unrelated-histories
 ```
 
-## Agentes Disponibles (37)
+## Agentes Disponibles (43)
+
+### SEO Workforce (opus)
+Pipeline de SEO clásico + GEO/AI search. Cada agente entiende primero el contexto del proyecto y deja documentación persistente en `docs/seo/` del proyecto objetivo. Pueden invocar otros agentes del repo para subir la calidad.
+
+| Agente | Modo | Descripción |
+|--------|------|-------------|
+| `seo-researcher` | default | Contexto del proyecto, keyword research, intención, análisis de SERP, competidores orgánicos y oportunidades GEO |
+| `seo-architect` | plan | Documento de estrategia (arquitectura pillar/cluster, justificación con evidencia, protocolo de calidad), content briefs y QA final |
+| `seo-writer` | acceptEdits | Redacción de páginas a partir del brief, en el formato real del proyecto, con autoevaluación contra el protocolo |
+
+**Flujo**: `seo-researcher` → `seo-architect` → `seo-writer` (una instancia por brief) → `seo-architect` (QA)
+
+```
+docs/seo/
+  00-contexto-proyecto.md   ← researcher
+  01-research.md            ← researcher
+  02-estrategia-seo.md      ← architect (arquitectura + justificación + tests)
+  briefs/<slug>.md          ← architect
+  qa/<slug>.md              ← writer (autoevaluación) + architect (validación)
+```
+
+**Protocolo de calidad por página**: 10 hard gates pass/fail (intención, keyword, canibalización, respuesta directa, fuentes, enlazado, metadata, schema, conversión, voz) + scorecard 0–100 (information gain, cobertura, E-E-A-T, citabilidad GEO, legibilidad, conversión, enlazado). Se publica con todos los gates en PASS y score ≥ 85.
 
 ### Críticos (opus + plan)
 Decisiones de alto impacto que requieren análisis profundo y aprobación.
