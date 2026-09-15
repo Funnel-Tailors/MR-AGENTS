@@ -17,7 +17,7 @@ git fetch origin
 git merge origin/main --allow-unrelated-histories
 ```
 
-## Agentes Disponibles (43)
+## Agentes Disponibles (44)
 
 ### SEO Workforce (opus)
 Pipeline de SEO clásico + GEO/AI search. Cada agente entiende primero el contexto del proyecto y deja documentación persistente en `docs/seo/` del proyecto objetivo. Pueden invocar otros agentes del repo para subir la calidad.
@@ -26,20 +26,24 @@ Pipeline de SEO clásico + GEO/AI search. Cada agente entiende primero el contex
 |--------|------|-------------|
 | `seo-researcher` | default | Contexto del proyecto, keyword research, intención, análisis de SERP, competidores orgánicos y oportunidades GEO |
 | `seo-architect` | plan | Documento de estrategia (arquitectura pillar/cluster, justificación con evidencia, protocolo de calidad), content briefs y QA final |
-| `seo-writer` | acceptEdits | Redacción de páginas a partir del brief, en el formato real del proyecto, con autoevaluación contra el protocolo |
+| `article-craftsman` | acceptEdits | Editor jefe: guía editorial común + un arquetipo con modelo por cada tipo de pieza del roadmap (how-to, comparativa, pillar, money page…) y pasada editorial conjunta para que todos los artículos suenen igual sin perder la forma de su caso |
+| `seo-writer` | acceptEdits | Redacción de páginas a partir del brief y su arquetipo, en el formato real del proyecto, con autoevaluación contra el protocolo |
 
-**Flujo**: `seo-researcher` → `seo-architect` → `seo-writer` (una instancia por brief) → `seo-architect` (QA)
+**Flujo**: `seo-researcher` → `seo-architect` → `article-craftsman` (guía + arquetipos) → `seo-writer` (una instancia por brief) → `article-craftsman` (pasada editorial) → `seo-architect` (QA)
 
 ```
 docs/seo/
-  00-contexto-proyecto.md   ← researcher
-  01-research.md            ← researcher
-  02-estrategia-seo.md      ← architect (arquitectura + justificación + tests)
-  briefs/<slug>.md          ← architect
-  qa/<slug>.md              ← writer (autoevaluación) + architect (validación)
+  00-contexto-proyecto.md        ← researcher
+  01-research.md                 ← researcher
+  02-estrategia-seo.md           ← architect (arquitectura + justificación + tests)
+  briefs/<slug>.md               ← architect (con arquetipo asignado)
+  03-guia-editorial.md           ← craftsman (voz y estilo, común a todas las piezas)
+  arquetipos/<arquetipo>.md      ← craftsman (esqueleto + modelo + checklist por tipo de pieza)
+  editorial/revision-<fecha>.md  ← craftsman (pasada editorial conjunta)
+  qa/<slug>.md                   ← writer (autoevaluación) + craftsman (revisión editorial) + architect (validación)
 ```
 
-**Protocolo de calidad por página**: 10 hard gates pass/fail (intención, keyword, canibalización, respuesta directa, fuentes, enlazado, metadata, schema, conversión, voz) + scorecard 0–100 (information gain, cobertura, E-E-A-T, citabilidad GEO, legibilidad, conversión, enlazado). Se publica con todos los gates en PASS y score ≥ 85.
+**Protocolo de calidad por página**: 11 hard gates pass/fail (intención, keyword, canibalización, respuesta directa, fuentes, enlazado, metadata, schema, conversión, voz, guía editorial y arquetipo) + scorecard 0–100 (information gain, cobertura, E-E-A-T, citabilidad GEO, legibilidad, conversión, enlazado). Se publica con todos los gates en PASS y score ≥ 85.
 
 ### Críticos (opus + plan)
 Decisiones de alto impacto que requieren análisis profundo y aprobación.

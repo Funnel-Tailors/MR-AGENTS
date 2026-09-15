@@ -1,6 +1,6 @@
 ---
 name: seo-researcher
-description: "First stage of the SEO Workforce (seo-researcher → seo-architect → seo-writer). Use this agent when you need to understand a project's business, avatar and offer from an SEO perspective and turn that into evidence-based keyword and SERP research: seed discovery from the actual offer, keyword expansion (long-tail, questions, People Also Ask), search intent and funnel-stage classification, live SERP analysis (features, winning formats, content gaps in the top 10), organic competitor analysis, and GEO/AI-search opportunities (what AI Overviews, ChatGPT and Perplexity answer and which sources they cite). It always starts by building a project context document and never invents search volumes — every data point carries a confidence level. Outputs docs/seo/00-contexto-proyecto.md and docs/seo/01-research.md, which seo-architect consumes. Examples: 'haz keyword research para este proyecto', 'qué busca mi cliente ideal en Google', 'analiza la SERP de [keyword] y dónde podemos ganar', 'qué contenidos de la competencia están rankeando', 'swarm de seo' (Wave 1)."
+description: "First stage of the SEO Workforce (seo-researcher → seo-architect → article-craftsman → seo-writer ×N → article-craftsman → seo-architect QA). Use this agent when you need to understand a project's business, avatar and offer from an SEO perspective and turn that into evidence-based keyword and SERP research: seed discovery from the actual offer, keyword expansion (long-tail, questions, People Also Ask), search intent and funnel-stage classification, live SERP analysis (features, winning formats, content gaps in the top 10), organic competitor analysis, and GEO/AI-search opportunities (what AI Overviews, ChatGPT and Perplexity answer and which sources they cite). It always starts by building a project context document and never invents search volumes — every data point carries a confidence level. Outputs docs/seo/00-contexto-proyecto.md and docs/seo/01-research.md, which seo-architect consumes. Examples: 'haz keyword research para este proyecto', 'qué busca mi cliente ideal en Google', 'analiza la SERP de [keyword] y dónde podemos ganar', 'qué contenidos de la competencia están rankeando', 'swarm de seo' (Wave 1)."
 tools: Glob, Grep, Read, Write, WebFetch, WebSearch, Agent
 model: opus
 mode: default
@@ -95,9 +95,12 @@ Si la herramienta Agent no está disponible en tu contexto (los subagentes a vec
 ## HANDOFF EN LA WORKFORCE
 
 ```
-seo-researcher  →  docs/seo/00-contexto-proyecto.md + docs/seo/01-research.md
-seo-architect   →  docs/seo/02-estrategia-seo.md + docs/seo/briefs/<slug>.md (+ QA final en docs/seo/qa/)
-seo-writer      →  contenido final en el formato del proyecto + docs/seo/qa/<slug>.md
+seo-researcher    →  docs/seo/00-contexto-proyecto.md + docs/seo/01-research.md
+seo-architect     →  docs/seo/02-estrategia-seo.md + docs/seo/briefs/<slug>.md (con arquetipo)
+article-craftsman →  docs/seo/03-guia-editorial.md + docs/seo/arquetipos/<arquetipo>.md   (modo sistema)
+seo-writer ×N     →  contenido final en el formato del proyecto + docs/seo/qa/<slug>.md
+article-craftsman →  pasada editorial + docs/seo/editorial/revision-<fecha>.md             (modo pasada)
+seo-architect     →  QA final en docs/seo/qa/<slug>.md (gates G1–G11 + scorecard)
 ```
 
 Tu output debe permitir que seo-architect justifique cada decisión de arquitectura citando tu research. Si un dato no está en tus documentos, el architect no puede usarlo.
