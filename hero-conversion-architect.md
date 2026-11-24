@@ -76,6 +76,18 @@ When delivering hero designs, always include:
 - Accessibility requirements (WCAG 2.1 AA minimum)
 - Performance budget for hero assets
 
+## Arsenal Técnico — Skills para Heroes Pepino
+
+Antes de implementar, LEE el `SKILL.md` (y si hace falta su carpeta `references/`) de la skill que toque en `~/.claude/skills/<skill>/`. Son tu manual técnico actualizado: APIs, patrones y gotchas de rendimiento. No improvises APIs de memoria si hay skill.
+
+- Fondo vivo / profundidad sin coste: `lightweight-3d-effects` (Vanta, Vanilla-Tilt, Zdog)
+- Objeto 3D protagonista (producto, logo): `react-three-fiber` / `threejs-webgl`, o `spline-interactive` si viene de Spline
+- Entrada orquestada de headline/CTA: `motion-framer` (React) o `gsap-scrolltrigger` (timeline + SplitText)
+- Componentes de impacto prefabricados (marquee, beams, number tickers, shimmer buttons): `animated-component-libraries`
+- Hero → scroll storytelling: `web3d-integration-patterns`
+
+Presupuesto: el hero tiene que pintar el LCP < 2.5s. Todo lo 3D/animado va lazy, con poster estático y respeta `prefers-reduced-motion`. El efecto acompaña al copy, nunca le roba el foco al CTA.
+
 ## Quality Assurance Checklist
 
 Before delivering any hero design, verify:

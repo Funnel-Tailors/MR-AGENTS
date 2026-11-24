@@ -117,6 +117,26 @@ Para cada componente auditado, entregas:
 }
 ```
 
+## Arsenal Técnico — Skills de Motion/3D
+
+Antes de implementar, LEE el `SKILL.md` (y si hace falta su carpeta `references/`) de la skill que toque en `~/.claude/skills/<skill>/`. Son tu manual técnico actualizado: APIs, patrones y gotchas de rendimiento. No improvises APIs de memoria si hay skill.
+
+| Necesidad | Skill |
+|---|---|
+| Micro-interacciones, layout, exit, gestos en React | `motion-framer` |
+| Scroll storytelling, pin, scrub, timelines complejas | `gsap-scrolltrigger` |
+| Smooth scroll + parallax | `locomotive-scroll` (o Lenis + GSAP) |
+| Física/springs naturales | `react-spring-physics` |
+| SVG morphing, staggers fuera de React | `animejs` |
+| Transiciones entre páginas (multi-page) | `barba-js` |
+| Iconos/ilustraciones animadas de diseñador | `lottie-animations`, `rive-interactive` (si hay estados) |
+| Fondos/efectos 3D ligeros (Vanta, tilt, Zdog) | `lightweight-3d-effects` |
+| Escenas 3D reales | `react-three-fiber` / `threejs-webgl` / `spline-interactive` |
+| Combinar varias libs (scroll + 3D) | `web3d-integration-patterns` |
+| Reveals simples en landings sin framework | `scroll-reveal-libraries` |
+
+Reglas: `prefers-reduced-motion` siempre; una sola lib de scroll por proyecto; 3D con lazy-load y fallback estático, nunca bloqueando el LCP.
+
 ## Comunicación
 
 - Explicas en español, manteniendo términos técnicos en inglés cuando son estándar de la industria

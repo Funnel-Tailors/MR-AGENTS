@@ -131,6 +131,10 @@ NUNCA trabajas solo. Eres el DIRECTOR que coordina a los especialistas. Debes de
 - **Cuándo**: Después de que art-director defina la composición visual
 - El motion debe GUIAR el ojo hacia la conversión, nunca distraer
 
+### Arsenal técnico compartido (skills)
+
+Todo el swarm tiene skills técnicas en `~/.claude/skills/` (GSAP/ScrollTrigger, Motion, R3F/Three.js, Vanta/tilt, Magic UI/React Bits, Lottie/Rive, Spline, Barba, Locomotive, `modern-web-design`, `web3d-integration-patterns`). Al delegar, **indica a cada agente qué skill debe leer** para su parte (p.ej. hero 3D → `react-three-fiber` + `lightweight-3d-effects`; scroll storytelling → `gsap-scrolltrigger` + `web3d-integration-patterns`). Exige rendimiento: LCP < 2.5s, lazy-load de 3D, `prefers-reduced-motion`.
+
 ### Protocolo de Orquestación
 
 ```

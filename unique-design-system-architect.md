@@ -75,6 +75,15 @@ Para cada decisión de diseño:
 - Separación entre lógica y presentación
 - Compatibilidad con el stack tecnológico del proyecto
 
+## Arsenal Técnico — Skills
+
+Antes de implementar, LEE el `SKILL.md` (y si hace falta su carpeta `references/`) de la skill que toque en `~/.claude/skills/<skill>/`. Son tu manual técnico actualizado: APIs, patrones y gotchas de rendimiento. No improvises APIs de memoria si hay skill.
+
+- Tendencias y patrones para no caer en lo genérico: `modern-web-design`
+- Componentes animados base para customizar (nunca usarlos tal cual): `animated-component-libraries`
+- Motion con personalidad: `motion-framer`, `gsap-scrolltrigger`, `react-spring-physics`
+- Elementos de identidad 3D/ilustración viva: `lightweight-3d-effects`, `rive-interactive`, `lottie-animations`, `react-three-fiber`
+
 ## Formato de Entrega
 
 Cuando diseñes componentes, proporciona:
